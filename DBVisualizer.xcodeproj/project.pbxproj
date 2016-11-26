@@ -12,9 +12,15 @@
 		9974F7CF1DE9CD01004DDD3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9974F7CD1DE9CD01004DDD3C /* Main.storyboard */; };
 		9974F7D11DE9CD01004DDD3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9974F7D01DE9CD01004DDD3C /* Assets.xcassets */; };
 		9974F7D41DE9CD01004DDD3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9974F7D21DE9CD01004DDD3C /* LaunchScreen.storyboard */; };
+		9974F7DD1DE9D580004DDD3C /* CampusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974F7DC1DE9D580004DDD3C /* CampusRepository.swift */; };
+		9974F7DF1DE9E469004DDD3C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9974F7DE1DE9E469004DDD3C /* GoogleService-Info.plist */; };
+		9974F7E21DE9E4FE004DDD3C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974F7E11DE9E4FE004DDD3C /* Restaurant.swift */; };
+		D82EB665A4E8CE534BA6AC86 /* Pods_DBVisualizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6C82A36EB84B5380648080 /* Pods_DBVisualizer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D6C82A36EB84B5380648080 /* Pods_DBVisualizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DBVisualizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		421C66A3DE277A9C1E529FEC /* Pods-DBVisualizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBVisualizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DBVisualizer/Pods-DBVisualizer.debug.xcconfig"; sourceTree = "<group>"; };
 		9974F7C61DE9CD01004DDD3C /* DBVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9974F7C91DE9CD01004DDD3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9974F7CB1DE9CD01004DDD3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,10 @@
 		9974F7D01DE9CD01004DDD3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9974F7D31DE9CD01004DDD3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9974F7D51DE9CD01004DDD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9974F7DC1DE9D580004DDD3C /* CampusRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusRepository.swift; sourceTree = "<group>"; };
+		9974F7DE1DE9E469004DDD3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9974F7E11DE9E4FE004DDD3C /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		C15D5C764B443F14FC5CBFDE /* Pods-DBVisualizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBVisualizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-DBVisualizer/Pods-DBVisualizer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82EB665A4E8CE534BA6AC86 /* Pods_DBVisualizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		944C312F4B23D0F6B81AC18F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D6C82A36EB84B5380648080 /* Pods_DBVisualizer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9974F7BD1DE9CD01004DDD3C = {
 			isa = PBXGroup;
 			children = (
 				9974F7C81DE9CD01004DDD3C /* DBVisualizer */,
 				9974F7C71DE9CD01004DDD3C /* Products */,
+				B574CDF22EE96D77BB3818CB /* Pods */,
+				944C312F4B23D0F6B81AC18F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +75,42 @@
 		9974F7C81DE9CD01004DDD3C /* DBVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				9974F7E01DE9E4F1004DDD3C /* Model */,
+				9974F7DB1DE9D563004DDD3C /* Repository */,
 				9974F7C91DE9CD01004DDD3C /* AppDelegate.swift */,
 				9974F7CB1DE9CD01004DDD3C /* ViewController.swift */,
 				9974F7CD1DE9CD01004DDD3C /* Main.storyboard */,
 				9974F7D01DE9CD01004DDD3C /* Assets.xcassets */,
 				9974F7D21DE9CD01004DDD3C /* LaunchScreen.storyboard */,
 				9974F7D51DE9CD01004DDD3C /* Info.plist */,
+				9974F7DE1DE9E469004DDD3C /* GoogleService-Info.plist */,
 			);
 			path = DBVisualizer;
+			sourceTree = "<group>";
+		};
+		9974F7DB1DE9D563004DDD3C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9974F7DC1DE9D580004DDD3C /* CampusRepository.swift */,
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
+		9974F7E01DE9E4F1004DDD3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9974F7E11DE9E4FE004DDD3C /* Restaurant.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B574CDF22EE96D77BB3818CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				421C66A3DE277A9C1E529FEC /* Pods-DBVisualizer.debug.xcconfig */,
+				C15D5C764B443F14FC5CBFDE /* Pods-DBVisualizer.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9974F7D81DE9CD01004DDD3C /* Build configuration list for PBXNativeTarget "DBVisualizer" */;
 			buildPhases = (
+				AAEDBCE3A6B282742C8F7159 /* [CP] Check Pods Manifest.lock */,
 				9974F7C21DE9CD01004DDD3C /* Sources */,
 				9974F7C31DE9CD01004DDD3C /* Frameworks */,
 				9974F7C41DE9CD01004DDD3C /* Resources */,
+				5EA49CC4B75299C73AA779CF /* [CP] Embed Pods Frameworks */,
+				7A14A7F3CCD3B06F923A0D63 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9974F7D41DE9CD01004DDD3C /* LaunchScreen.storyboard in Resources */,
+				9974F7DF1DE9E469004DDD3C /* GoogleService-Info.plist in Resources */,
 				9974F7D11DE9CD01004DDD3C /* Assets.xcassets in Resources */,
 				9974F7CF1DE9CD01004DDD3C /* Main.storyboard in Resources */,
 			);
@@ -131,13 +184,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5EA49CC4B75299C73AA779CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DBVisualizer/Pods-DBVisualizer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A14A7F3CCD3B06F923A0D63 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DBVisualizer/Pods-DBVisualizer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAEDBCE3A6B282742C8F7159 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9974F7C21DE9CD01004DDD3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9974F7E21DE9E4FE004DDD3C /* Restaurant.swift in Sources */,
 				9974F7CC1DE9CD01004DDD3C /* ViewController.swift in Sources */,
 				9974F7CA1DE9CD01004DDD3C /* AppDelegate.swift in Sources */,
+				9974F7DD1DE9D580004DDD3C /* CampusRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +361,11 @@
 		};
 		9974F7D91DE9CD01004DDD3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 421C66A3DE277A9C1E529FEC /* Pods-DBVisualizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DBVisualizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DonovanDeSmedt.DBVisualizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,9 +375,11 @@
 		};
 		9974F7DA1DE9CD01004DDD3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C15D5C764B443F14FC5CBFDE /* Pods-DBVisualizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DBVisualizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DonovanDeSmedt.DBVisualizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,6 +406,7 @@
 				9974F7DA1DE9CD01004DDD3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

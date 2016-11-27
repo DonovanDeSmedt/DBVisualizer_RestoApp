@@ -26,6 +26,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var dbRef :FIRDatabaseReference!
     var restaurants = [Restaurant]()
     var currentRestaurant :Restaurant = Restaurant()
+    var currentCampus :String = ""
     
     private let repo = CampusRepository()
     
@@ -51,8 +52,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     func startObservingDB() {
-        
-        dbRef.observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+        dbRef.observe(.value, with:{ (snapshot: FIRDataSnapshot) in
             var newRestos = [Restaurant]()
             
             for resto in snapshot.children {
@@ -61,10 +61,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             }
             self.restaurants = newRestos
             
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
+        })
     }
     
     
@@ -100,11 +97,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == campusPickerView{
             txfCampus.text = repo.campussen[row]
+            currentCampus = txfCampus.text! == "--default--" ? "": txfCampus.text!
         }
         
         if pickerView ==  restoPickerView{
             txfResto.text = repo.getRestos(of: txfCampus.text!).map {$0.naam}[row]
-            getData(of: restos[restoPickerView.selectedRow(inComponent: 0)])
+            if txfResto.text != "--default--"{
+                getData(of: restos[restoPickerView.selectedRow(inComponent: 0)])
+            }
+            else{
+                currentRestaurant = Restaurant()
+            }
         }
         
     }
@@ -114,6 +117,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func getData(of resto: CampusRepository.Resto){
         let id = resto.id
         currentRestaurant = restaurants.filter {$0.key == id}.first!
+        
         sliderBezetting.value = Float((currentRestaurant.bezetting)!) / 100.0
         sliderBeschikbaarheid.value = Float((currentRestaurant.beschikbaarheid)!) / 100.0
         
@@ -128,15 +132,38 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onClickRandom(_ sender: UIButton) {
-    }
     @IBAction func onChangeBezetting(_ sender: UISlider){
+        
         txfBezetting.text = "\(Int(sender.value * 100))"
-        dbRef.child(currentRestaurant.key).child("bezetting").setValue(Int(sender.value * 100))
+
+        if currentRestaurant.key! == "" && currentCampus != ""{
+            let restosOfCampus = repo.getRestos(of: currentCampus)
+            for r in restosOfCampus{
+                if r.naam != "--default--"{
+                    dbRef.child(r.id).child("bezetting").setValue(Int(sender.value * 100))
+                }
+                
+            }
+        }
+        else if currentRestaurant.key! != ""{
+            dbRef.child(currentRestaurant.key).child("bezetting").setValue(Int(sender.value * 100))
+        }
+        
     }
     @IBAction func onChangeBeschikbaarheid(_ sender: UISlider){
         txfBeschikbaarheid.text = "\(Int(sender.value * 100))"
-        dbRef.child(currentRestaurant.key).child("beschikbaarheid").setValue(Int(sender.value * 100))
+        
+        if currentRestaurant.key! == "" && currentCampus != ""{
+            let restosOfCampus = repo.getRestos(of: currentCampus)
+            for r in restosOfCampus{
+                if r.naam != "--default--"{
+                    dbRef.child(r.id).child("beschikbaarheid").setValue(Int(sender.value * 100))
+                }
+            }
+        }
+        else if currentRestaurant.key! != ""{
+            dbRef.child(currentRestaurant.key).child("beschikbaarheid").setValue(Int(sender.value * 100))
+        }
     }
     
     

@@ -148,6 +148,7 @@
 				TargetAttributes = {
 					9974F7C51DE9CD01004DDD3C = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = X95F39SMBT;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -364,6 +365,7 @@
 			baseConfigurationReference = 421C66A3DE277A9C1E529FEC /* Pods-DBVisualizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X95F39SMBT;
 				INFOPLIST_FILE = DBVisualizer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -378,6 +380,7 @@
 			baseConfigurationReference = C15D5C764B443F14FC5CBFDE /* Pods-DBVisualizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X95F39SMBT;
 				INFOPLIST_FILE = DBVisualizer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
